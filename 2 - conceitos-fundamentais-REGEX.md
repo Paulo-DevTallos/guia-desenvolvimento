@@ -10,7 +10,18 @@ sintax sugar: /o/
 * 'g' - global - localiza todas as ocorrências de forma global. Ex: /o/g
 * 'i' - utilizando a flag "i" passamos a considerar todas as ocorrências de um determinado caracter: 
 Ex: Paulo, /p/ig ou /P/gi => a posição da flag i não interfere no resultado da busca. 
-Nesse caso temos todas as ocorrências com letras maiusculas ou minusculas na palavra  
+Nesse caso temos todas as ocorrências com letras maiusculas ou minusculas na palavra 
+
+Realizando busca dentro da regex com opções de strings
+Ex: React, ReactJS 
+/react(js)?/ig ou /react(js){0,1}/
+/(react|reactjs)/ig - forma mais verbosa, pois repete as palavras da busca
+* () - cria um aninhamento "concatenando" valores de caracteres, variáveis
+* ? - Significa que o último caracter ou bloco de agrupamento podem existir nenhuma ou uma vez 
+* {0,1} - Significa que podem haver nenhuma ou uma ocorrência de determinado valor
+* {0,} - Significa que podem haver nenhuma ou infinitas ocorrências de determinado valor.
+* + - Caracter de uma ou mais ocorrências
+* * - Caracter de nenhuma ou muita ocorrências, varrendo todos os resultados
 
 * '^' - caracter circunflexo representa o inicio de uma string de caracteres 
 * '$' - representa o final da string de caracteres
