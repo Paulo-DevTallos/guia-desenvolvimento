@@ -3,7 +3,7 @@
 forma tradicional: new RegExp("o") - encontra qualquer ocorrência dessa letra dentro de uma string, comum utilização para concatenar strings com variáveis
 sintax sugar: /o/
 
-* //ig - regex vazia considerando todo um texto aplicado
+* //ig - regex vazia considerando todo um texto aplicado.
 * \d - digito
 * \d. - "." representa um meta-char, interpreta qualquer caracter entre digitos
 * \d\. - busca um ponto "." literal
