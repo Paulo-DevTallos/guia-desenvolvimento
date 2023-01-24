@@ -23,8 +23,8 @@ Ex: React, ReactJS
 * ? - Significa que o último caracter ou bloco de agrupamento podem existir nenhuma ou uma vez 
 * {0,1} - Significa que podem haver nenhuma ou uma ocorrência de determinado valor
 * {0,} - Significa que podem haver nenhuma ou infinitas ocorrências de determinado valor, nesse contexto a virgula representa quantas vezes forem necessários.
-* + - Caracter de uma ou mais ocorrências
-* * - Caracter de nenhuma ou muita ocorrências, varrendo todos os resultados
+* "+" - Caracter de uma ou mais ocorrências
+* "*" - Caracter de nenhuma ou muita ocorrências, varrendo todos os resultados
 * [-.$] ou [0-9a-g] - definindo uma cadeia de caracteres
 * Ex: formatação de um CPF: \d{3}.\d{3}.\d{3}\[-.]?\d{2} ****
 * '^' - caracter circunflexo representa o inicio de uma string de caracteres 
