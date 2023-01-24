@@ -36,7 +36,7 @@ Ex: Paulo, /ulo$/ig - quero que termine com esses caracteres
 Tratando espaçamentos em uma regex:
 * \s - significa whitespace
 [1-3]?\d\s - define um espaço em uma cadeia com digitos de 1 a 3 e que contém um espaço em branco
-* para definir um espaçamento maior: é preciso um quantifier para o caracter: \s{1,}
+* para definir um espaçamento maior: é preciso um quantifier para o caracter: \s{1,} ou \s+
 
 * \ - contra barra é utilizado quando queremos especificar um caracter espacial válido em nossa busca.
 Ex: Paulo$, /ulo$\$/ig
@@ -74,6 +74,20 @@ que são blocos de dígitos \d entre 1 e 3 caracteres {1,3}
 ```sh
 # Qual é a classe correta para definir os números entre 1 e 3 E 6 e 9?
 [1-36-9]
+
+## definindo formato de data no padrão 28 de Dezembro de 2023
+[1-3]?\d\s+de\s+[A-Z][a-zç]{3,8}\s+de\s+[12]\d{3}
+
+Explicação:
+[1-3]?\d - quantidade de caracteres entre 1 e 3 digitos (dia)
+\s+ - espaço em branco que pode ser 1 ou mais
+[A-Z][a-zç]{3,8} - definição da regex que configura os mêses do ano 
+ex: [Primeira letra do mês maiuscula entre A-Z][demais letras minusculas entre a-z, considerando ç como caracter especial]{quantidade de letras dos meses}
+[primeiro número que o ano deverá pouuir]\d{3}
+
+## definindo formato de hora 19h32min16s
+\d{2}h\d{2}min\d{2}\s
+outro modo: [0-9]{2}h[0-9]{2}mim[0-9]{2}s
 ```
 
 
