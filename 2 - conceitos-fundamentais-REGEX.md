@@ -3,13 +3,15 @@
 forma tradicional: new RegExp("o") - encontra qualquer ocorrência dessa letra dentro de uma string, comum utilização para concatenar strings com variáveis
 sintax sugar: /o/
 
+Principais caracteres utilizados no RegEx:
 * //ig - regex vazia considerando todo um texto aplicado.
 * \d - digito
-* \d. - "." representa um meta-char, interpreta qualquer caracter entre digitos
+* \d. - interpreta qualquer caracter entre digitos
 * \d\. - busca um ponto "." literal
 * 'g' - global - localiza todas as ocorrências de forma global. Ex: /o/g
 * 'i' - utilizando a flag "i" passamos a considerar todas as ocorrências de um determinado caracter: 
-* '.' - se não for isolado por uma barra representa todos os caracteres dentro de uma cadeia de strings
+* '.' - representa um meta-char, se não for isolado por uma barra representa todos os caracteres dentro de uma cadeia de strings
+* 
 Ex: Paulo, /p/ig ou /P/gi => a posição da flag i não interfere no resultado da busca. 
 Nesse caso temos todas as ocorrências com letras maiusculas ou minusculas na palavra 
 
@@ -20,17 +22,21 @@ Ex: React, ReactJS
 * () - cria um aninhamento "concatenando" valores de caracteres, variáveis
 * ? - Significa que o último caracter ou bloco de agrupamento podem existir nenhuma ou uma vez 
 * {0,1} - Significa que podem haver nenhuma ou uma ocorrência de determinado valor
-* {0,} - Significa que podem haver nenhuma ou infinitas ocorrências de determinado valor.
+* {0,} - Significa que podem haver nenhuma ou infinitas ocorrências de determinado valor, nesse contexto a virgula representa quantas vezes forem necessários.
 * + - Caracter de uma ou mais ocorrências
 * * - Caracter de nenhuma ou muita ocorrências, varrendo todos os resultados
 * [-.$] ou [0-9a-g] - definindo uma cadeia de caracteres
-* Ex: formatação de um CPF: \d{3}.\d{3}.\d{3}\[-.]?\d{2}
-
+* Ex: formatação de um CPF: \d{3}.\d{3}.\d{3}\[-.]?\d{2} ****
 * '^' - caracter circunflexo representa o inicio de uma string de caracteres 
 * '$' - representa o final da string de caracteres
 Ex: Paulo, /^paulo$/ig - faz um match checkando toda a palavra buscada.
 Ex: Paulo, /^pa/ig - quero que comece com esses caracteres
 Ex: Paulo, /ulo$/ig - quero que termine com esses caracteres
+
+Tratando espaçamentos em uma regex:
+* \s - significa whitespace
+[1-3]?\d\s - define um espaço em uma cadeia com digitos de 1 a 3 e que contém um espaço em branco
+* para definir um espaçamento maior: é preciso um quantifier para o caracter: \s{1,}
 
 * \ - contra barra é utilizado quando queremos especificar um caracter espacial válido em nossa busca.
 Ex: Paulo$, /ulo$\$/ig
@@ -47,7 +53,7 @@ quantifier - é utilizado para definir quantas vezes um determinado caracter dev
 
 ##
 
-Exercicio:
+Exercicios:
 
 ```sh
 ## O número do IP de um computador é gerado ao conectá-lo à internet, 
