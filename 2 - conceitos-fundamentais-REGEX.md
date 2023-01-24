@@ -51,6 +51,19 @@ quantifier - é utilizado para definir quantas vezes um determinado caracter dev
 * \d{3} - retorna o digito 3x
 * \d{3}\.\d{3}\.\d{3}\-\d{2} - cpf utilizando quantifier
 
+Ancoras:
+É o mesmo que procurar uma palavra especifica dentro de um texto e saber sua posição, Não pode está atrelado a um word char: 
+Obs: word char é "[A-Za-z0-9_]" ou mais curto \w
+* \b - word boundary 
+Ex 1: de aplicação: procurando as preposições "de" na frase "Eu fico cada vez mais feliz de estudar e de aprender" => \bde\b
+Essa notação vai delimitar as duas ocorrências de "de" dentro da frase.
+Ex 2: "aaa aaaaaa aaa aaaaaa aaa aaaa" => utilizando o \baaa\b ele encontrará apenas as ocorrências de "3as" dentro da frase.  
+
+Âncoras de inicio e de final:
+Ex: url file:///USer/minhaurl/Desktop/regex/index.html
+* ^file.+\.html$ => encontra toda a URL pois ela inicia e termina com os caracteres estabelecidos
+
+
 ##
 
 Exercicios:
