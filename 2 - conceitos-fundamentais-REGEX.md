@@ -88,6 +88,7 @@ ex: [Primeira letra do mês maiuscula entre A-Z][demais letras minusculas entre 
 ## definindo formato de hora 19h32min16s
 \d{2}h\d{2}min\d{2}\s
 outro modo: [0-9]{2}h[0-9]{2}mim[0-9]{2}s
+
+## definindo as regras de regex para uma placa de carro
+[A-Z]{3}-\d{4}
 ```
-
-
