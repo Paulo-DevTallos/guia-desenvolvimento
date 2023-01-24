@@ -57,7 +57,12 @@ Obs: word char é "[A-Za-z0-9_]" ou mais curto \w
 * \b - word boundary 
 Ex 1: de aplicação: procurando as preposições "de" na frase "Eu fico cada vez mais feliz de estudar e de aprender" => \bde\b
 Essa notação vai delimitar as duas ocorrências de "de" dentro da frase.
-Ex 2: "aaa aaaaaa aaa aaaaaa aaa aaaa" => utilizando o \baaa\b ele encontrará apenas as ocorrências de "3as" dentro da frase.  
+Ex 2: "aaa aaaaaa aaa aaaaaa aaa aaaa" => utilizando o \baaa\b ele encontrará apenas as ocorrências de "3as" dentro da frase. 
+
+Exemplo contrário de word boundary, existe o non-word boundary \B (Maiuscula). 
+Aplicada a franse "portugues proporciona compor" => \Bpor\B
+A nossa regex seleciona a sílaba "por", e antes e depois dela, deve ter um Non word boundary. Em outras palavras, 
+a silaba por deve aparecer dentro de uma palavra, nunca no inicio ou fim.
 
 Âncoras de inicio e de final:
 Ex: url file:///USer/minhaurl/Desktop/regex/index.html
@@ -104,4 +109,8 @@ outro modo: [0-9]{2}h[0-9]{2}mim[0-9]{2}s
 
 ## definindo as regras de regex para uma placa de carro
 [A-Z]{3}-\d{4}
+
+## definindo regex que captura "Data: 02/09/1964 ou Data:02/09/1964".
+^Data:[\s]?[0-9]{2}\/[0-9]{2}\/[0-9]{4}$
+
 ```
