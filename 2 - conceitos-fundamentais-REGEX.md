@@ -114,3 +114,22 @@ outro modo: [0-9]{2}h[0-9]{2}mim[0-9]{2}s
 ^Data:[\s]?[0-9]{2}\/[0-9]{2}\/[0-9]{4}$
 
 ```
+
+Revisão sobre os grupos de regex:
+Ancoras:
+\b - world boundary
+^  - início do alvo
+$ - fim do alvo
+
+Quantificadores:
+{n,m} - "n" o minimo de vezes / "m" - o máximo de vezes
+? - zero ou uma vez
+"+" - uma ou mais vezes
+("*") - zero ou mais vezes
+
+Classes de char - []
+[A-Z] - letras de A até Z
+[123] - 1,2 ou 3
+\d - todos os digitos
+\s - whitespace
+\w - wordchar [A-Za-z0-9_]
