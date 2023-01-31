@@ -78,6 +78,10 @@ Ex: [1-3]?\d\s+(de\s+)?[A-Z][a-zç]{3,8}\s+(de\s+)?([12]\d{3}) = criando grupo q
 
 Non-Capturing group - (?:de\s+) (não deve devolver o grupo formado pela preposição de e por um \s)
 Quantifier - [a-z]? (a classe deve ocorrer zero ou uma vez)
+
+Utilizando a notação de referencia de grupo: Utilizamos quando qureremos repetir um comportamento dentro de uma cadeia de caracteres
+Ex: <h1>Hello world</h1> = <(h1|h2)>(\s\wõãç+)</\1>
+Notação de referencia \1 => backreference
  
 ##
 
