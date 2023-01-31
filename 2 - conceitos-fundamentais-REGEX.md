@@ -68,7 +68,17 @@ a silaba por deve aparecer dentro de uma palavra, nunca no inicio ou fim.
 Ex: url file:///USer/minhaurl/Desktop/regex/index.html
 * ^file.+\.html$ => encontra toda a URL pois ela inicia e termina com os caracteres estabelecidos
 
+Definição de grupo de caracteres
+() - utilizando parentese podemos definir um grupo. Ex: quando possuímos uma determinada sequencia de caracteres e precisamos 
+capturar um valor especifico.
+Ex: [1-3]?\d\s+de\s+[A-Z][a-zç]{3,8}\s+de\s+([12]\d{3}) = capturamos o ano especificamente
+Ex: [1-3]?\d\s+(de\s+)?[A-Z][a-zç]{3,8}\s+(de\s+)?([12]\d{3}) = criando grupo que diz que a prepocição e os espaços brancos serão opcionais
 
+* (?:de\s+) - nessa notação utilizando a "?:" definimos que o grupo não deverá fazer parte de um resultado na regex engine
+
+Non-Capturing group - (?:de\s+) (não deve devolver o grupo formado pela preposição de e por um \s)
+Quantifier - [a-z]? (a classe deve ocorrer zero ou uma vez)
+ 
 ##
 
 Exercicios:
@@ -115,21 +125,27 @@ outro modo: [0-9]{2}h[0-9]{2}mim[0-9]{2}s
 
 ```
 
-Revisão sobre os grupos de regex:
+Revisão sobre o regex:
 Ancoras:
-\b - world boundary
-^  - início do alvo
-$ - fim do alvo
+* \b - world boundary
+* ^  - início do alvo
+* $ - fim do alvo
 
 Quantificadores:
-{n,m} - "n" o minimo de vezes / "m" - o máximo de vezes
-? - zero ou uma vez
-"+" - uma ou mais vezes
-("*") - zero ou mais vezes
+* {n,m} - "n" o minimo de vezes / "m" - o máximo de vezes
+* ? - zero ou uma vez
+* "+" - uma ou mais vezes
+* ("*") - zero ou mais vezes
 
 Classes de char - []
-[A-Z] - letras de A até Z
-[123] - 1,2 ou 3
-\d - todos os digitos
-\s - whitespace
-\w - wordchar [A-Za-z0-9_]
+* [A-Z] - letras de A até Z
+* [123] - 1,2 ou 3
+* \d - todos os digitos
+* \s - whitespace
+* \w - wordchar [A-Za-z0-9_]
+
+Grupos
+* (\w+) - grupo de wordchar
+* (\w+)? - grupo optional
+* (?:\w+) - non-capturing-group
+
