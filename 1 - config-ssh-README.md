@@ -1,4 +1,4 @@
-# configurando-shh
+# configurando-SSH
 gerando chave SSH utilizando abordagem no contexto Windows / WSL / Linux.
 
 ```bash
