@@ -9,18 +9,23 @@ de programação como a Golang.</br>
 Se você quer instalar a linguagem de programação Go (Golang) no WSL/WSL 2 e configurar seu ambiente de desenvolvimento temos uns passos a serem seguidos:
 </br></br>
 <strong>1 - Verifique a versão do Go que você deseja executar:</strong></br>
-Você pode fazer essa verificação através do site da própria linguagem, lá existem diversas versões para distribuições Linux (nativa), macOS e Windows
+Você pode fazer essa verificação através do site da própria linguagem, lá existem diversas versões para distribuições Linux (nativa), macOS e Windows.</br>
+Escolha a versão da linguagem de sua preferência e execute os seguintes comandos:
+<a href="https://go.dev/dl/">Ir para a documentação Go</a></br>
 
 ```bash
-## Exemplo da estrutura
-Repositorio
-   |--- Reposotorio_1.0
-   |    |--- index.html
-   |    |--- README.md
-   |    
-   |--- Reposotorio_2.0
-   |    |--- index.html
-   |    |--- README.md
-   |  
-   |--- README.md
+## Para esse exemplo utilizaremos uma distribuição nativa do próprio Linux visto que o WSL simula esse ambiente
+## até a criação desse tutorial a versão mais atual da linguagem Go é a 1.20.3
+
+# baixa o arquivo executável compactado
+$ wget https://go.dev/dl/go1.20.3.linux-amd64.tar.gz
+
+# extrai os arquivos dentro do diretório atual
+$ sudo tar -xvf go1.20.3.linux-amd64.tar.gz
+
+$ ls
+  go go1.20.3.linux-amd64.tar.gz
+
+# é recomendado mover o arquivo extraído para o path /usr/local/
+$ sudo mv go /usr/local
 ```
