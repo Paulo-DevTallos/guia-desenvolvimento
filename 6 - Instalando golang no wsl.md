@@ -56,15 +56,16 @@ $ go version
 Uma vez instalado a Golang necessita da execução da extensão oficial GO no VS Code para processar alguns recursos e ferramentas que a linguagem
 depende para funcionar completamente. Para isso após instalar a extensão utilize o comando CTRL + SHIFT + P e procure pela opção >Go: Install/Update Tools
 selecione todas as ferramentas necessárias para o funcionamento da linguagem.
-<code>
-  // hello world em Go
+```bash
+# hello world em Go
   package main
   
-  <code>import "fmt"</code>
+  import "fmt"
   
   func main() {
     fmt.Printf("Hello world")
-</code>
+  }
+```
 ```bash
 # execute o comando para a saída
 $ go run <filename.go>
