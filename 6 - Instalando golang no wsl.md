@@ -60,7 +60,7 @@ selecione todas as ferramentas necessárias para o funcionamento da linguagem.
   // hello world em Go
   package main
   
-  import "fmt"
+  <code>import "fmt"</code>
   
   func main() {
     fmt.Printf("Hello world")
