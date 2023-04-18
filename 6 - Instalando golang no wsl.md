@@ -69,5 +69,5 @@ selecione todas as ferramentas necessárias para o funcionamento da linguagem.
 ```bash
 # execute o comando para a saída
 $ go run <filename.go>
-  hello world
+  Hello world
 ```
