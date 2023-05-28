@@ -23,9 +23,8 @@ $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bas
 Com isso temos o NVM instalado, esse comando cria automáticamente um script de inicialização do NVM em no path de nosso terminal (na nossa máquina). Para verificar basta digitar <code>nvm --help</code>. Se por acaso não for retornada as mensagens de help do NVM configure manualmente o script no sistema. Para adicioná-lo no path do nosso sistema, precisamos editar um desses três arquivos ( ~/.zshrc, ~/.profile, or ~/.bashrc), vai depender do seu terminal de utilização, adicione ao final do arquivo o seguinte trecho de código:
 
 ```bash
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 ```
 Após essa configuração é só digitar o comando de help ou verificar a versão, então teremos o NVM funcionando.
 </br></br>
