@@ -9,7 +9,7 @@ Por exemplo, se você possui o Node v18.16.0 instalado em seu sistema e precisa 
 Para esse tutorial verificaremos a instalação para quem utiliza as dependências de Debian e Ubuntu, mas se preferir você pode consultar o repositório oficial do NVM e verificar o passo a passo completo. </br>
 ver tutorial completo: <a href="https://github.com/nvm-sh/nvm">Repositório NVM</a>
 </br></br>
-Utilizaremos o comando curl para instalar o NVM, caso não possua o comando basta instalá-lo.</br>
-```sh 
+Utilizaremos o comando curl para instalar o NVM, caso não possua o comando basta instalá-lo.
+```bash 
 $ sudo apt install curl
 ```
