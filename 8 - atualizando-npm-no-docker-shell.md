@@ -111,3 +111,15 @@ A situação é a seguinte:
   <li>Preciso que ele sempre verifique a existencia de novas versões do NPM</li>
   <li>Se houver ele precisa atualizar, caso contrário segue o fluxo normal</li>
 </ul>
+Acabamos de criar um algoritmo que fará essa ação e agora precisamos implementá-lo. Adianto que será necessário entender o básico de terminal shell e alguma familiaridade com o Linux</br>
+Caso queira é só clicar no link <a href="https://www.alura.com.br/conteudo/shellscripting">e estudar esse tópico</a></br>
+Então vamos para o nosso entrypoint.sh realizar nossas configurações:
+
+<span>Estrutura atual do arquivo</span>
+```bash
+#!/bin/bash
+
+npm install
+
+npm run start:dev
+```
