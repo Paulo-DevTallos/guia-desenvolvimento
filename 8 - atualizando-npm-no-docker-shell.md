@@ -25,8 +25,6 @@ FROM node:18-alpine
 
 WORKDIR /usr/my-app/app
 
-USER node
-
 COPY package*.json .
 
 EXPOSE 3000
@@ -113,13 +111,40 @@ A situação é a seguinte:
 </ul>
 Acabamos de criar um algoritmo que fará essa ação e agora precisamos implementá-lo. Adianto que será necessário entender o básico de terminal shell e alguma familiaridade com o Linux</br>
 Caso queira é só clicar no link <a href="https://www.alura.com.br/conteudo/shellscripting">e estudar esse tópico</a></br>
-Então vamos para o nosso entrypoint.sh realizar nossas configurações:
+Então vamos para o nosso entrypoint.sh realizar nossas configurações:</br></br>
 
 <span>Estrutura atual do arquivo</span>
 ```bash
 #!/bin/bash
 
+# instala o npm gerando uma node_modules com os pacotes ja instalados,
+# é importante realizar previamente a configuração de volumes no Docker.
 npm install
+
+# após instalar o NPM irá inicializar o script que executa a aplicação,
+# nesse caso definido em nosso "package.json"
+npm run start:dev
+```
+<span>Estrutura do arquivo com a configuração</span>
+```bash
+#!/bin/bash
+
+# crie variáveis que irão armazenar as suas necessidades
+# verificar a versão atual do NPM
+current_npm_version=$(npm -v)
+
+# verificar a versão do npm mais recente disponível
+latest_npm_version=$(npm show npm version)
+
+# aplique uma condicional que verifica as duas variáveis
+if [ "$current_npm_version" != "$latest_npm_version" ];
+then
+  echo "Nova versão disponível $latest_npm_version, atualizando..."
+  npm install -g npm@latest
+  npm install
+else
+  npm install
+fi
 
 npm run start:dev
 ```
