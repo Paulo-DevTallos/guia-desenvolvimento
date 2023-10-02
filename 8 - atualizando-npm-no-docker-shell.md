@@ -33,3 +33,18 @@ EXPOSE 3000
 
 CMD [ "tail", "-f", "/dev/null" ]
 ```
+</br></br>
+<h2>Juntando tudo até aqui</h2>
+Compreendido todos esses conceitos até aqui vamos para a nossa execução de fato, o ponto central desse artigo é te mostrar como fazer o update do NPM dentro do Docker toda vez que uma nova versão estiver disponível para ser baixada. Isso pode nos trazer uma série de benefícios como manter nosso software sempre atualizado, evitar incopatibilidades nas versões de recursos a serem utilizados conforme nosso software cresce e mais uma série de benefíicios.
+</br></br>
+Um outro ponto importante é que ao utilizamos o Node a partir do Docker temos acesso aos recursos do Node em nosso projeto, no caso da utilização do NPM o Node sempre enxerga a versão do que está em nossa máquina em acordo com a versão utilizada na imagem criada para o Docker, e sim, é possível configurar tudo isso. Mas em nosso contexto vamos imaginar que estamos rodando nossa imagem personalidade criada a partir de uma imagem Node no Docker conforme o Dockerfile a cima e para essa execução vamos precisar de mais dois recursos do Docker que são um "docker-compose" e um arquivo em shell chamado "entrypoint", então vamos para a prática.
+</br></br>
+<h2>Informações importantes</h2>
+Antes precisamos entender rapidamente o que é um entrypoint, que em um contexto Docker é um arquivo de script shell que é frequentemente usado como ponto de entrada para um contêiner Docker quando ele é iniciado. Esse script é executado assim que o contêiner é iniciado e pode ser usado para realizar tarefas específicas antes de iniciar o aplicativo principal dentro do contêiner. No nosso caso ao criar esse arquivo no diretório: $ .docker/entrypoint.sh adicioamos a ele a seguinte estrutura:
+```bash 
+#!/bin/bash
+
+npm install
+
+npm run start:dev
+```
