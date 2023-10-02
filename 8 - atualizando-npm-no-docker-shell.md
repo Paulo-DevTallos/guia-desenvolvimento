@@ -95,3 +95,8 @@ my-app | [nodemon] watching extensions: js,msj,cjs,json
 my-app | [nodemon] starting `node server.js`
 my-app | Server running on http://localhost:3000
 ```
+Note que o ao subir o container o log nos mostra que a aplicação subiu normalmente, inclusive executando o Nodemon e trazendo a mensagem que aplicamos ao console.log no server de nossa aplicação, porém ela também nos mostra uma série de outras informações como quantidade de pacotes atualizados, vulnerabilidades que esses pacotes possam trazer para a nossa aplicação e a principal delas que é o "npm notice New major version of npm available 9.8.1. -> 10.1.0" essa informação é a que nos interessa. Isso em si é apenas um warning, mas notamos que em seguida o npm nos entrega a maneira de como "solucionar" isso que é atraves do comando "npm install -g npm@10.1.0", esse comando realiza o update de nossa versão atual para a versão disponibilizada.
+</br></br>
+Como vimos anteriormente a criação de scripts engloba a automatização de nossas necessidades do dia a dia, nesse caso ela diz respeito a atualização do npm em nossa máquina para que possamos manter nosso gerenciador de pacotes sempre atualizado evitando percalços na instalação de bibliotecas mais modernas e na gestão das existentes.
+</br></br>
+Como também sabemos é possível consultar uma versão com o comando <code>npm -v | npm --version</code> ou verificar se existe alguma nova versão disponível com o comando <code>npm show npm version</code>
