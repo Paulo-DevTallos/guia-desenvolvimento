@@ -55,10 +55,10 @@ Já o nosso docker-compose será o responsável por fazer a chamada se execuçã
 version: '3'
 
 services:
-  generator-api:
+  my-app:
     build:
       context: .
-    container_name: gen-api
+    container_name: my-app-project
     entrypoint: sh ./.docker/entrypoint.sh ## a chamada para o arquivo entrypoint é feita por meio desse comando.
     tty: true
     ports:
