@@ -66,3 +66,6 @@ services:
     volumes:
       - .:/usr/my-app/app
 ```
+Existem também uma outra abordagem utilizada para chamar o entrypoint a partir do arquivo Dockerfile através do comando <code>ENTRYPOINT: path</code>, porém aqui em nosso caso estou utilizando uma abordagem em que essa chamada é feita através de um compose.
+</br></br>
+<h2>Mantendo nosso gerenciador de pacotes sempre atualizado</h2>
