@@ -71,4 +71,27 @@ Existem também uma outra abordagem utilizada para chamar o entrypoint a partir 
 <h2>Mantendo nosso gerenciador de pacotes sempre atualizado</h2>
 Um ponto importante é que vamos aqui tratar da criação de um script que envolve lógica e a criação de um passo a passo, o que devemos ter em mente é que para criar scripts em alguns casos estamos falando da automatização de atividades as vezes do nosso dia a dia. Por exemplo, ao inicializarmos uma aplicação e executar um servidor com Node podemos utilizar simplesmente o comando <code>node filepath</code>, ao executar um script do próprio NPM como <code>npm run build</code>, <code>npm install | npm uninstall</code> estamos executando scripts que rodam dentro do package-manager do Node por debaixo dos panos, algo semelhante ao que criamos quando instalamos o Nodemon por exemplo que vai nos dar recursos como hotreload além de evitar execuções manuais, para isso criamos um "script { "start:dev": "nodemon filepath", "start": "node filepath" }" dentro de nosso package.json.
 </br></br>
-Entendido isso executamos nosso compose com o comando <code>docker-compose up -d && docker-compose logs -f <container_name></code> que vai subir nosso container e em seguida executar os logs de nossa aplicação
+Entendido isso executamos nosso compose com o comando <code>docker-compose up -d && docker-compose logs -f <container_name></code>, que vai subir o container com nossa aplicação e em seguida executar os logs
+
+```bash
+my-app | up to date, audited 107 packages in 595ms
+my-app |
+my-app | 13 packages are looking for funding
+my-app |   run `npm fund` for details
+my-app |
+my-app | found 0 vulnerabilities
+my-app | npm notice
+my-app | npm notice New major version of npm available 9.8.1. -> 10.1.0
+my-app | npm noitice Changelog: https://github.com/npm/cli/releases/tag/v10.1.0
+my-app | npm notice Run npm install -g npm@10.1.0 to update!
+my-app |
+my-app | > my-app@1.0.0. start:dev
+my-app | > nodemon server.js
+my-app |
+my-app | [nodemon] 3.0.1
+my-app | [nodemon] to restart at any time, enter `rs`
+my-app | [nodemon] watching path(s): *.*
+my-app | [nodemon] watching extensions: js,msj,cjs,json
+my-app | [nodemon] starting `node server.js`
+my-app | Server running on http://localhost:3000
+```
