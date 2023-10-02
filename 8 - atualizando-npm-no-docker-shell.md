@@ -49,3 +49,20 @@ npm install
 
 npm run start:dev
 ```
+Já o nosso docker-compose será o responsável por fazer a chamada se execução de inicializaação no contexto do entrypoint. Não abordaremos o que é um docker-compose, porém podemos dizer que ele é como um gerenciador de containers que são criados a partir das nossas imagens. Em sua estrutura vamos ver que ele possui um comando que faz a chamada do entrypoint:
+
+```bash 
+version: '3'
+
+services:
+  generator-api:
+    build:
+      context: .
+    container_name: gen-api
+    entrypoint: sh ./.docker/entrypoint.sh ## a chamada para o arquivo entrypoint é feita por meio desse comando.
+    tty: true
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/my-app/app
+```
