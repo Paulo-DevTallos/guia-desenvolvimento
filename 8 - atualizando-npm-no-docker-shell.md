@@ -147,7 +147,7 @@ fi
 
 npm run start:dev
 ```
-<h2>Observações<h2>
+<h2>Observações</h2>
 Utilizada a abordagem a cima aprendemos como fazer a atualização de nosso NPM dentro do container Docker, porém existem pontos que devemos levar em consideração:
 <ul>
   <li>Mantenha também seu gerenciador de pacotes atualizado em seu ambiente local independente de container</li>
@@ -155,3 +155,4 @@ Utilizada a abordagem a cima aprendemos como fazer a atualização de nosso NPM 
   <li>Sim é possível realizar esse update utilizando os poderes do USER não-root, porém é necessário realizar a sua inclusão no Cgroups do Docker pelo Dockerfile, em outras palavras seria como usar uma basuca para matar uma formiga, não vale muito a pena!</li>
 </ul>
 Concluídos estes pontos vemos que o Docker nos permiti acesso a todo tipo de ambiente dentro de diversas aplicações e sistemas operacionais em diversos recursos, Isso faz do Docker uma ferramenta barata e largamente utilizada para ambientes e infraestrutura. Por hoje aprendemos como utilizar uma parte desse poder que o Docker nos entrega para manter nossa aplicação atualizada dentro de seu próprio contexto. 
+  
