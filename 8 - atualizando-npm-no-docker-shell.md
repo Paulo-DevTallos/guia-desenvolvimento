@@ -10,7 +10,6 @@ NPM (Node Package Manager) é o gerenciador de pacotes padrão para o ecossistem
   <li>Gerenciamento de pacote, o qual o NPM utiliza-se de um auto rastreio para verificar as dependências necessárias em que seu projeto precise para trabalhar</li>
   <li>Criação de scripts personalizados no package.json que permitem a execução de comandos do próprio NPM</li>
 </ul>
-</br></br>
 <h2>Instalando o NVM</h2>
 Para esse tutorial verificaremos a instalação para quem utiliza as dependências de Debian e Ubuntu, mas se preferir você pode consultar o repositório oficial do NVM e verificar o passo a passo completo. </br>
 ver tutorial completo: <a href="https://github.com/nvm-sh/nvm">Repositório NVM</a>
