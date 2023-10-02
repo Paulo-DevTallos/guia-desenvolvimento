@@ -99,4 +99,15 @@ Note que o ao subir o container o log nos mostra que a aplicação subiu normalm
 </br></br>
 Como vimos anteriormente a criação de scripts engloba a automatização de nossas necessidades do dia a dia, nesse caso ela diz respeito a atualização do npm em nossa máquina para que possamos manter nosso gerenciador de pacotes sempre atualizado evitando percalços na instalação de bibliotecas mais modernas e na gestão das existentes.
 </br></br>
-Como também sabemos é possível consultar uma versão com o comando <code>npm -v | npm --version</code> ou verificar se existe alguma nova versão disponível com o comando <code>npm show npm version</code>
+Como também sabemos é possível consultar uma versão com o comando <code>npm -v | npm --version</code> ou verificar se existe alguma nova versão disponível com o comando <code>npm show npm version</code>, e o que esses comandos fazem respectivamente são mostrar a versão atual Ex: v9.8.1 e verificar se existe uma nova versão Ex: v10.1.0. Sabendo disso temos a opção de manter o gerenciador de pacotes atualizado por conta própria utilizando os comandos <code>npm install -g npm@version</code>, <code>npm install -g npm@*</code> ou <code>npm install -g npm@latest</code> que respectivamente instalam globalmente uma versão especifica, todas as versão e pela current version, ou seja a versão mais atual. Tendo isso em mente partimos para a criação do nosso script.
+</br></br>
+Como verificamos no tópico anterior temos a opção de utilizar um entrypoint, que no contexto do Docker é o arquivo de entrada que vai executar ações pre-configuradas em sequencia de script uma vez que a imagem é criada, e é atraves dele que iremos realizar nossa ação de update do NPM. Lembre-se, é importantissimo desenvolver um senso analítico inclusive em cima das ações do seu dia a dia, programar em si é estar diante de uma sequencia repetitiva e conhecer essa sequencia é fundamental para te fazer avançar.
+</br></br>
+A situação é a seguinte:
+<ul>
+  <li>Ao criar uma imagem personalizada no Docker, tenho como base uma imagem já existente do Node</li>
+  <li>Ao criar essa imagem necessito de um entrypoint</li>
+  <li>A responsábilidade do entrypoint é executar os comandos de intalação do NPM (gerando uma node_modules) "npm install" e executar meu servidor de desenvolvimento "npm run start:dev"</li>
+  <li>Preciso que ele sempre verifique a existencia de novas versões do NPM</li>
+  <li>Se houver ele precisa atualizar, caso contrário segue o fluxo normal</li>
+</ul>
