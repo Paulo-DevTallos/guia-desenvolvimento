@@ -13,9 +13,9 @@ NPM (Node Package Manager) é o gerenciador de pacotes padrão para o ecossistem
 Porém como é a proposta desse artigo vamos explorar algo mais específico utilizando o Docker no contexto de execução de um container utilizando uma imagem Node.
 </br>
 <h2>Um pouco sobre o Docker</h2>
-Para esse tutorial verificaremos a instalação para quem utiliza as dependências de Debian e Ubuntu, mas se preferir você pode consultar o repositório oficial do NVM e verificar o passo a passo completo. </br>
-ver tutorial completo: <a href="https://github.com/nvm-sh/nvm">Repositório NVM</a>
+O Docker é uma plataforma de código aberto que permite criar, implementar e gerenciar a criação de aplicativo em containers. Um contêiner é uma unidade de software leve que inclui tudo o que é necessário para executar um aplicativo, incluindo o código, runtime, bibliotecas, dependências e variáveis de ambiente. Isso faz o Docker uma ferramenta amplamente utilizada para desenvolver e implantar aplicativos de maneira consistente e escalável, independente de ambiente ou hospedagem, ou seja, com a utilização do Docker não temos problemas como o famoso "na minha máquina funciona...".
 </br></br>
+<h2>Criando uma imagem Node</h2>
 Utilizaremos o comando curl para instalar o NVM, caso não possua o comando basta instalá-lo.
 
 ```bash 
