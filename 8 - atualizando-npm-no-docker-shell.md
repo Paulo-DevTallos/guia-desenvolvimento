@@ -41,6 +41,7 @@ Um outro ponto importante é que ao utilizamos o Node a partir do Docker temos a
 </br></br>
 <h2>Informações importantes</h2>
 Antes precisamos entender rapidamente o que é um entrypoint, que em um contexto Docker é um arquivo de script shell que é frequentemente usado como ponto de entrada para um contêiner Docker quando ele é iniciado. Esse script é executado assim que o contêiner é iniciado e pode ser usado para realizar tarefas específicas antes de iniciar o aplicativo principal dentro do contêiner. No nosso caso ao criar esse arquivo no diretório: $ .docker/entrypoint.sh adicioamos a ele a seguinte estrutura:
+
 ```bash 
 #!/bin/bash
 
