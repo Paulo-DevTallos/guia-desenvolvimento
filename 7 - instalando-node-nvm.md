@@ -96,4 +96,5 @@ lts/fermium -> v14.21.3 (-> N/A)
 lts/gallium -> v16.20.0 (-> N/A)
 lts/hydrogen -> v18.16.0
 ```
-Utilize o comando <code>nvm use v16.20.0</code> para trocar da versão 18 para a 16, por exemplo. Basicamente o comando ls identifica as versões instaladas e o comando use <versão> faz o apontamento para a versão que você deseja utilizar.
+Utilize o comando <code>nvm use v16.20.0</code> para trocar da versão 18 para a 16, por exemplo. Basicamente o comando ls identifica as versões instaladas e o comando use <versão> faz o apontamento para a versão que você deseja utilizar.</br>
+Para manter uma versão como padrão utilize <code>nvm alias default v16.20.0</code>
